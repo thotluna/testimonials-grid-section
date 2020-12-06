@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+$movil: 375px;
+$font-size-body: 13px;
+// Colors
+$violet: hsl(263, 55%, 52%);
+$grayish-blue: hsl(217, 19%, 35%);
+$blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+$gray: hsl(0, 0%, 81%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+$opacity-verified: 0.5;
+$opacity-paragraphs: 0.7;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: $font-size-body;
+  background-color: $light-grayish-blue;
+  font-weight: 500;
+
+  padding: 4em;
+
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media(max-width: $movil) {
+    padding: 4em 2em;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  width: 90vw;
+  min-height: 80vh;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));;
+  grid-template-rows: repeat(2 1fr) 1em;
+  gap: 10px;
+  grid-auto-flow: dense;
+  grid-template-areas:
+    "card-daniel card-daniel card-jonathan card-kira"
+    "card-jeanette card-patrick card-patrick card-kira"
+    "atribute atribute atribute atribute";
+  @media (max-width: $movil) {
+    padding: 10vh auto;
+    grid-template-areas:
+      "card-daniel"
+      // "card-daniel"
+      "card-jonathan"
+      "card-jeanette"
+      "card-patrick"
+      // "card-patrick"
+      "card-kira"
+      // "card-kira";
+      "atribute"
+  }
+  > div {
+    border-radius: 5px;
+    padding: 2em;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: stretch;
+      font-size: 0.8125em;
+      img {
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+      h3 {
+        font-weight: 600;
+        color: $gray;
+      }
+      h4 {
+        color: $gray;
+        opacity: $opacity-verified;
+      }
+    }
+    .body {
+      
+      color:$white;
+      font-size: 13px;
+      
+      h2 {
+        line-height: 1.2;
+        font-size: 1.8em;
+        font-weight: 600;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 0.8125em;
+        line-height: 1.5;
+        opacity: $opacity-paragraphs;
+      }
+    }
+  }
+  .card-daniel {
+    grid-area: card-daniel;
+    background: url("images/bg-pattern-quotation.svg") no-repeat right top;
+    background-color: $violet;
+  }
+  .card-jonathan {
+    grid-area: card-jonathan;
+    background-color: $grayish-blue;
+  }
+  .card-jeanette {
+    grid-area: card-jeanette;
+    background-color: $white;
+  }
+  .card-patrick {
+    grid-area: card-patrick;
+    background-color: $blackish-blue;
+  }
+  .card-kira {
+    grid-area: card-kira;
+    background-color: $white;
+  }
+  .attribution {
+    grid-area: atribute;
+    padding: 0;
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: hsl(228, 45%, 44%);
+    }
+  }
+}
+
+.card-white {
+  background-color: $white;
+  h2, h3, h4, p {
+    color: $grayish-blue
+  }
+  // h4 {
+  //   opacity: $opacity-verified;
+  // }
+  // p {
+  //   opacity: $opacity-paragraphs;
+  // }
+
+}

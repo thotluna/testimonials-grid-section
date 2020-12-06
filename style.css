@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  background-color: #ecf2f8;
+  font-weight: 500;
+  padding: 4em;
+  width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 375px) {
+  body {
+    padding: 4em 2em;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  width: 90vw;
+  min-height: 80vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  -ms-grid-rows: (1fr)[2] 1em;
+      grid-template-rows: repeat(2 1fr) 1em;
+  gap: 10px;
+  grid-auto-flow: dense;
+      grid-template-areas: "card-daniel card-daniel card-jonathan card-kira" "card-jeanette card-patrick card-patrick card-kira" "atribute atribute atribute atribute";
+}
+
+@media (max-width: 375px) {
+  .container {
+    padding: 10vh auto;
+        grid-template-areas: "card-daniel" "card-jonathan" "card-jeanette" "card-patrick" "card-kira" "atribute";
+  }
+}
+
+.container > div {
+  border-radius: 5px;
+  padding: 2em;
+}
+
+.container > div .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  font-size: 0.8125em;
+}
+
+.container > div .header img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.container > div .header h3 {
+  font-weight: 600;
+  color: #cfcfcf;
+}
+
+.container > div .header h4 {
+  color: #cfcfcf;
+  opacity: 0.5;
+}
+
+.container > div .body {
+  color: white;
+  font-size: 13px;
+}
+
+.container > div .body h2 {
+  line-height: 1.2;
+  font-size: 1.8em;
+  font-weight: 600;
+}
+
+.container > div .body p {
+  margin-top: 10px;
+  font-size: 0.8125em;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.container .card-daniel {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: card-daniel;
+  background: url("images/bg-pattern-quotation.svg") no-repeat right top;
+  background-color: #7541c8;
+}
+
+.container .card-jonathan {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: card-jonathan;
+  background-color: #48556a;
+}
+
+.container .card-jeanette {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: card-jeanette;
+  background-color: white;
+}
+
+.container .card-patrick {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: card-patrick;
+  background-color: #19212e;
+}
+
+.container .card-kira {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: card-kira;
+  background-color: white;
+}
+
+.container .attribution {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-area: atribute;
+  padding: 0;
+  font-size: 11px;
+  text-align: center;
+}
+
+.container .attribution a {
+  color: #3e52a3;
+}
+
+.card-white {
+  background-color: white;
+}
+
+.card-white h2, .card-white h3, .card-white h4, .card-white p {
+  color: #48556a;
+}
+/*# sourceMappingURL=style.css.map */
